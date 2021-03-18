@@ -1,0 +1,195 @@
+.orgTreeContainer {
+  width: 100%;
+  display: block;
+}
+
+.orgTreeContainer > button {
+  margin: 1rem 0 0 1rem;
+}
+
+.orgTree {
+  min-width: 100%;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.orgTree ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0 5px;
+}
+
+.orgTree li {
+  justify-content: center;
+  justify-items: center;
+  list-style-type: none;
+
+  /* Importante para o .orgTree li::before position: absolute */
+  position: relative;
+}
+
+.node {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Esse padding menor de 16 no top é assim para 
+  considerar a border-top apenas dos nodes do meio */
+  padding: 16px 5px 18px 5px;
+
+  border-top: 2px solid var(--org-tree-line-color);
+
+  position: relative;
+}
+
+/* Barra vertical no topo */
+.orgTree li::before {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  top: 0px;
+
+  border-left: 2px solid var(--org-tree-line-color);
+
+  height: 18px;
+}
+
+/* Barra vertical na base */
+.node::after {
+  content: "";
+
+  position: absolute;
+  /* Metade do tamanho do cartão */
+  left: 50%;
+  bottom: 0;
+
+  border-left: 2px solid var(--org-tree-line-color);
+
+  height: 18px;
+}
+
+/* Tira a barra horizontal superior de cada primeiro node (o da esquerda) */
+.orgTree li:first-child > .node {
+  /* border-top-color:red; */
+  border: none;
+  padding: 18px 5px 18px 5px;
+}
+/* Linhas vertical e horizontal do primeiro node (à direita) */
+.orgTree li:first-child::before {
+  border-left: 2px solid var(--org-tree-line-color);
+  border-right: none;
+  border-top: 2px solid var(--org-tree-line-color);
+  border-radius: 5px 0 0 0;
+
+  left: 50%;
+
+  width: 50%;
+}
+
+/* Tira a barra horizontal superior de cada último node (o da direita) */
+.orgTree li:last-child > .node{
+  /* border-top-color:blue; */
+  border: none;
+
+  padding: 18px 5px 18px 5px;
+}
+/* Linhas vertical e horizontal do último node (à direita) */
+.orgTree li:last-child::before {
+  border-left: none;
+  border-right: 2px solid var(--org-tree-line-color);
+  border-top: 2px solid var(--org-tree-line-color);
+  border-radius: 0 5px 0 0;
+
+  position: absolute;
+  left: 0;
+
+  width: 50%;
+}
+
+/* Tira a barra horizontal superior de cada node único */
+.orgTree ul > li:only-child > .node{
+  /* border-top-color:yellow; */
+  border: none;
+}
+/* linha vertical do node único */
+.orgTree li:only-child::before {
+  border-left: 2px solid var(--org-tree-line-color);
+  border-right: none;
+  border-top: none;
+  border-radius: 0;
+
+  position: absolute;
+  width: 0;
+  left: 50%;
+}
+
+/* Tira a barra vertical inferior de quem não tem filho */
+.node:last-child::after {
+  display: none;
+}
+
+/* Tira a barra vertical superior do nivel 1 */
+.orgTree > ul > li::before {
+  display: none;
+}
+
+/* Tira a barra horizontal superior do nivel 1 */
+.orgTree > ul > li > .node {
+  /* border-top-color:yellow; */
+  border: none;
+}
+
+/* ------------------- CARD --------------------- */
+
+.card {
+  width: 12.5rem;
+}
+
+.cardImg {
+  max-height: 6.6rem;
+  object-fit: cover;
+}
+
+.cardBody {
+  padding: 0.8rem;
+}
+
+.cardTitle {
+  text-align: center;
+  padding-bottom: 0.4rem;
+  margin-bottom: 0.4rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.cardTable {
+  width: 100%;
+}
+
+.cardTable td:first-child {
+  font-weight: bold;
+}
+
+.cardTable tr {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardCheckboxContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  height: fit-content;
+}
+
+.menuItem label {
+  margin: 0;
+}
