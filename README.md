@@ -3,6 +3,14 @@ Organizational chart to visually represente the EPRO (product structure) of a KC
 
 https://epro-in-cascade-app.vercel.app/
 
+## References
+https://react-icons.github.io/react-icons/search?q=chart
+https://reactjsexample.com/customizable-and-responsive-react-sidebar-library-with-dropdown-menus/
+https://react-bootstrap.github.io/components/cards/
+https://naveenda.medium.com/how-to-make-the-employee-hierarchy-chart-using-react-d48c7ca440c3
+https://www.bitovi.com/blog/recursive-react-components#:~:text=Recursion%20in%20React,essentially%20functions%20which%20return%20JSX.&text=Here%2C%20the%20recursive%20call%20is,of%20the%20props%20it%20received.
+https://github.com/daniel-hauser/react-organizational-chart
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
